@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "email": "sample@gmail.com",
+      "password": "123456",
+      "country": "India",
+      "gender": "male",
+      "technology": [
+        "html",
+        "css"
+      ],
+      "id": 1
+    },
+    {
+      "email": "rasel@gmail.com",
+      "password": "5465465",
+      "country": "Afganistan",
+      "gender": "male",
+      "technology": [
+        "css",
+        "java"
+      ],
+      "id": 2
+    },
+    {
+      "email": "noman@gmail.com",
+      "password": "123544",
+      "country": "Nepal",
+      "gender": "male",
+      "technology": [
+        "css",
+        "vue.js"
+      ],
+      "id": 3
+    },
+    {
+      "email": "santo@gmail.com",
+      "password": "2545",
+      "country": "India",
+      "gender": "male",
+      "technology": [
+        "html"
+      ],
+      "id": 4
+    },
+    {
+      "email": "santo@gmail.com",
+      "password": "2545",
+      "country": "India",
+      "gender": "male",
+      "technology": [
+        "html"
+      ],
+      "id": 5
+    }
+  ]
+}
