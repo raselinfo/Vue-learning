@@ -1,5 +1,5 @@
 <template>
-  Vue
+  Home
 </template>
 
 <script>

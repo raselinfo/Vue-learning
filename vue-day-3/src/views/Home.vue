@@ -1,5 +1,5 @@
 <template>
-  Node
+  Home
 </template>
 
 <script>

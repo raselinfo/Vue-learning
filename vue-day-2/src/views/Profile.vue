@@ -1,5 +1,6 @@
 <template>
-  <router-view></router-view>
+  Profile
+  fafaf
 </template>
 
 <script>
