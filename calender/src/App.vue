@@ -12,7 +12,7 @@
         <p v-for="day in startDay()" :key="day"></p>
         <p
           v-for="date in daysInMonth(currentYear, currentMonthInNumber)"
-          :key="date"
+          :key="date" ref="date" @click="getDate"
         >
           {{ date }}
         </p>
@@ -61,6 +61,10 @@ export default {
 
       console.log(this.currentMonthInNumber)
     },
+    getDate(){
+      console.log(this.$refs.date)
+      return
+    }
   },
   computed:{
     currentMonthInName(){
