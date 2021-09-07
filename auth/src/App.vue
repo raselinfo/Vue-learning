@@ -1,40 +1,51 @@
 <template>
-  <router-link to="/">Home</router-link>
-  <router-link to="/about">About</router-link>
-  <router-link v-if="!name?.name" to="/login">Login</router-link>
-  <router-link v-if="!name?.name" to="/signup">Signup</router-link>
-  <span class="userName">{{ name?.name.toUpperCase() }}</span>
-  <hr />
-  <button @click="logout">Log out</button>
-
-  <router-view></router-view>
+  <h1 class="text-center">Form Validation</h1>
+  <form novalidate @submit.prevent="registerUser" class="bg-indigo-lighten-4 mx-auto pa-5">
+    <p><input  v-model="name" class="bg-white mb-3 pa-5" type="text" placeholder="Name" />
+    </p> <p><input  v-model="email" class="bg-white mb-3 pa-5" type="email" placeholder="Email" />
+    </p>
+    <p>
+      <input  v-model="password"
+        class="bg-white mb-3 pa-5"
+        type="password"
+        placeholder="Password"
+      />
+    </p>
+    <p>
+      <input  v-model="password2"
+        class="bg-white mb-3 pa-5"
+        type="password"
+        placeholder="Confirm Password"
+      />
+     
+    </p>
+    <v-btn type="submit" color="primary">Submit</v-btn>
+  </form>
 </template>
 
 <script>
-import { getAuth, signOut } from "firebase/auth";
+import comState from "./assets/comState"
 export default {
-  setup() {
-    let name = JSON.parse(localStorage.getItem("userInfo"));
-    const logout = () => {
-      localStorage.removeItem("userInfo");
-      const auth = getAuth();
-      signOut(auth)
-    };
-    return {
+  setup(){
+    const {name,email,password,password2}=comState()
+
+
+    return{
       name,
-      logout,
-    };
-  },
+      email,
+      password,
+      password2
+    }
+  }
+
 };
 </script>
 
 <style>
-a {
-  margin: 5px;
+form {
+  width: 500px;
 }
-.userName {
-  background: rgb(109, 241, 20);
-  padding: 10px;
-  display: inline-block;
+input {
+  width: 100%;
 }
 </style>
