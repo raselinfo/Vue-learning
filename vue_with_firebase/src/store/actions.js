@@ -1,7 +1,8 @@
 const axios = require("axios")
+
 export const getUserInfo = (({ commit }, payload) => {
     if (payload === null) {
-        localStorage.removeItem("userInfo")
+        localStorage.setItem("userInfo",null)
     } else {
         localStorage.setItem("userInfo", JSON.stringify(payload))
     }
@@ -12,6 +13,8 @@ export const getUserInfo = (({ commit }, payload) => {
         .catch((error) => {
             console.log(error.message)
         })
+
+ 
 
 })
 

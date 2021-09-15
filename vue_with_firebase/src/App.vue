@@ -15,6 +15,7 @@ export default {
     onMounted(() => {
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));
       userInfo && store.dispatch("updateUserInfo", userInfo);
+      
     });
   },
 };

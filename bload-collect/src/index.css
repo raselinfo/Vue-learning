@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
+* {
+  margin            : 0;
+  padding           : 0;
+  -webkit-box-sizing: border-box;
+  box-sizing        : border-box;
+  outline           : 0;
+}
+
+/* Reset Code  */
+.form-control:focus {
+  box-shadow  : none;
+  border-color: transparent;
+}
+
+.active {
+  background: #da2f62;
+
+}
+
+img {
+  width: 100%;
+}
+
+.btn {
+  width  : 150px;
+  display: block;
+}
+
+:root {
+  /* Color */
+  --primary: #FC5286;
+  --dark   : #474445;
+  --gray   : #544C4F;
+  --shadow : #fc52867a;
+  --white  : #fff;
+  /* Font */
+  --roboto : 'Roboto',
+    sans-serif;
+}
+
+/* Login */
+.login {
+  height: 100vh;
+}
+
+.login .login__inner {
+  width: 500px;
+}
+
+.login .login__inner h1 {
+  font-family: var(--roboto);
+  font-weight: 700;
+  color      : var(--primary);
+  position   : relative;
+}
+
+.login .login__inner h1::after {
+  content   : "";
+  display   : inline-block;
+  width     : 80px;
+  height    : 5px;
+  background: var(--primary);
+  position  : absolute;
+  top       : 50%;
+  left      : 65%;
+  transform : translateY(-50%);
+}
+
+.login .login__inner h1::before {
+  content   : "";
+  display   : inline-block;
+  width     : 80px;
+  height    : 5px;
+  background: var(--primary);
+  position  : absolute;
+  top       : 50%;
+  right     : 65%;
+  transform : translateY(-50%);
+}
+
+.login .login__inner input,
+.login .login__inner select,
+.search  input,
+.search  select {
+  border-radius: 20px;
+  box-shadow   : 0px 0px 5px 5px var(--shadow);
+  padding:5px;
+}
+
+.login .login__inner input::placeholder {
+  color: var(--shadow)
+}
+
+/* Sign UP */
+.blood__select {
+  width  : 100%;
+  padding: 8px 10px;
+  border : none;
+}
+
+.login .login__inner .form>input,
+.login .login__inner select,
+.gender,
+.districs {
+  margin-bottom: 20px;
+}
+
+.gender label {
+  font-weight: 600;
+  font-family: var(--roboto);
+}
+
+.gender input {
+  box-shadow  : 0px 0px 2px 0px var(--shadow) !important;
+  margin-left : 5px !important;
+  margin-right: 5px;
+  ;
+}
+
+/* Navbar */
+.home__navbar {
+  background: var(--primary);
+  /* height :74px; */
+}
+
+.home__navbar .nav-link {
+  color        : var(--white);
+  font-size    : 20px;
+  font-weight  : 600;
+  width        : 100px;
+  text-align   : center;
+  border-radius: 20px;
+
+}
+
+.user__photo {
+  width        : 40px;
+  height       : 40px;
+  cursor       : pointer;
+  border-radius: 50%;
+  display      : inline-block;
+  position     : relative;
+  z-index      : 1111;
+  margin-left:40px;
+}
+
+.user__photo::after {
+  content      : "";
+  width        : 55px;
+  height       : 55px;
+  background   : #fff;
+  position     : absolute;
+  top          : -17%;
+  left         : -19%;
+  border-radius: 50%;
+  z-index      : -1;
+  animation    : one 2s linear infinite;
+  transition   : .5s;
+}
+
+.user__photo::before {
+  content      : "";
+  width        : 70px;
+  height       : 70px;
+  background   : rgba(255, 255, 255, 0.788);
+  position     : absolute;
+  top          : -36%;
+  left         : -37%;
+  border-radius: 50%;
+  z-index      : -1;
+  animation    : two 2s linear infinite;
+  transition   : .5s;
+}
+
+.user__photo .dropdown {
+  background   : var(--white);
+  position     : absolute;
+  width        : 200px;
+  box-shadow   : 0px 0px 5px 2px rgb(211, 149, 175);
+  text-align   : center;
+  border-radius: 5px;
+  top          : 90px;
+  left         : -56px;
+  transition: 1s;
+}
+
+.user__photo .dropdown a {
+  display        : block;
+  text-decoration: none;
+  font-size      : 20px;
+  font-weight    : 600;
+  padding        : 10px 0;
+
+}
+
+.user__photo .dropdown a:hover {
+  background: var(--primary);
+  color     : var(--white)
+}
+
+/* Search */
+.search{
+  height:100px;
+}
+.search .form{
+  width:80%;
+}
+.search .form .btn{
+  background:var(--primary);
+  color:var(--white);
+  font-weight:600;
+}

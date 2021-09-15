@@ -16,13 +16,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <li v-if="userEmail" class="nav-item">
               <router-link class="nav-link" to="/">Home</router-link>
             </li>
-            <li class="nav-item">
+            <li v-if="userEmail" class="nav-item">
               <router-link class="nav-link" to="/about">About</router-link>
             </li>
-            <li class="nav-item">
+            <li v-if="userEmail" class="nav-item">
               <router-link class="nav-link" to="/contact">Contact</router-link>
             </li>
             <li v-if="!fullName" class="nav-item">
@@ -73,6 +73,7 @@ export default {
     const router = useRouter();
     const fullName = computed(() => store.getters.getFullName);
     const email = computed(() => store.getters.getAdminEmail);
+    const userEmail = computed(() => store.getters.userEmail);
     const photo = computed(() => store.getters.getPhoto);
     const auth = getAuth();
     // User Log Out
@@ -91,6 +92,7 @@ export default {
       email,
       photo,
       logOut,
+      userEmail
     };
   },
 };

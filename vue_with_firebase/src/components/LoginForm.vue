@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { watch } from "vue";
+import { watch,onMounted } from "vue";
 import { comState } from "../assets/comState";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
@@ -75,6 +75,13 @@ export default {
     const router = useRouter();
     let { email, password, errors, isError } = comState();
     const auth = getAuth();
+
+    onMounted(()=>{
+      let userEmail=JSON.parse(localStorage.getItem("userInfo"))
+      if(userEmail?.email){
+        router.push("/")
+      }
+    })
     // Login With Google
     const loginWithGoogle = () => {
       const provider = new GoogleAuthProvider();
@@ -86,6 +93,7 @@ export default {
             email:email,
             photo:photoURL
           }
+          localStorage.setItem("userInfo", JSON.stringify(userInfo))
           store.dispatch("getUserInfo",userInfo)
           router.push("/")
         })
